@@ -69,15 +69,21 @@
       "nome": "abc",
       "email": "abc@gmail.com",
       "senha": "abcdef",
-      "favoritos": [],
+      "favoritos": [
+        1,
+        3
+      ],
       "id": "2494"
     },
     {
+      "id": "0252",
       "nome": "aaaaa",
       "email": "aaaaa@gmail",
       "senha": "aaaaaa",
-      "favoritos": [],
-      "id": "0252"
+      "favoritos": [
+        3,
+
+      ]
     }
   ]
 }

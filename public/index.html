@@ -13,18 +13,14 @@
 <body>
   <!-- ========== HEADER ========== -->
   <header>
-    <div class="bg-danger text-center py-3">
-      <h1>
-        <img src="logo.jpg" width="100" height="80" alt="Logo" />
-        Catálogo de Filmes
-      </h1>
-      <ul class="list-inline">
-        <li class="list-inline-item"><a href="#sobre">Sobre</a></li>
-        <li class="list-inline-item"><a href="#servicos">Serviços</a></li>
-        <li class="list-inline-item"><a href="#portfolio">Portfólio</a></li>
-        <li class="list-inline-item"><a href="#contato">Contato</a></li>
-      </ul>
-    </div>
+  <div
+    class="bg-success text-white py-3 d-flex justify-content-center align-items-center"
+    style="background: linear-gradient(135deg, #28a745 0%, #20c997 100%) !important; height: 150px;"
+  >
+    <img src="logo.jpg" width="100" height="80" alt="Logo" />
+    <!-- margem à esquerda p/ separar do logo -->
+    <h1 class="display-4 mb-0 ms-3">Catálogo de Filmes</h1>
+  </div>
 
     <!-- Menu + Busca -->
     <nav class="container my-3">
@@ -56,7 +52,7 @@
             <button class="btn btn-success w-100">Login</button>
           </a>
         </div>
-        
+
         <div class="col" id="favoritos-container" style="display: none;">
           <button class="btn btn-warning w-100" onclick="mostrarFavoritos()">
             Favoritos
@@ -230,14 +226,64 @@
   </div>
 
   <!-- ========== FOOTER ========== -->
-  <footer class="bg-danger text-center text-white py-4">
-    <h2>Sobre o Criador:</h2>
-    <ul class="list-inline">
-      <li class="list-inline-item"><a class="text-white" href="#instagram">Instagram</a></li>
-      <li class="list-inline-item"><a class="text-white" href="#twitter">Twitter</a></li>
-      <li class="list-inline-item"><a class="text-white" href="#linkedin">LinkedIn</a></li>
-      <li class="list-inline-item"><a class="text-white" href="#discord">Discord</a></li>
-    </ul>
+  <footer class="bg-success text-white py-3" style="background: linear-gradient(135deg, #28a745 0%, #20c997 100%) !important;">
+    <div class="container">
+      <div class="row justify-content-center align-items-center">
+        <div class="col-lg-8">
+          <div class="text-center mb-3">
+            <div class="position-relative d-inline-block mb-2">
+              <img src="https://i.pinimg.com/originals/76/b3/b4/76b3b44c11c5d41ce34f0bc74c92ed7f.jpg" 
+                   alt="Avatar Henrique" 
+                   class="rounded-circle shadow-lg" 
+                   style="width: 100px; height: 100px; object-fit: cover; border: 3px solid rgba(255,255,255,0.3);">
+              <div class="position-absolute bottom-0 end-0 bg-light rounded-circle" 
+                   style="width: 25px; height: 25px; border: 2px solid white;">
+                <i class="fas fa-graduation-cap text-success" style="font-size: 10px; margin-top: 5px;"></i>
+              </div>
+            </div>
+
+            <h3 class="fw-bold mb-2" style="color: #fff; text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">
+              <i class="fas fa-user-circle me-2"></i>Henrique César Silva Carvalho
+            </h3>
+
+            <div class="badge bg-light text-dark fs-6 px-3 py-2 mb-2">
+              <i class="fas fa-university me-2"></i>Ciências da Computação - PUC MG Coreu
+            </div>
+
+            <div class="d-flex justify-content-center align-items-center mb-3">
+              <div class="badge bg-warning text-dark me-2">
+                <i class="fas fa-users me-1"></i>Turma: 3567.1.00
+              </div>
+              <div class="badge bg-info text-dark">
+                <i class="fas fa-code me-1"></i>Desenvolvedor
+              </div>
+            </div>
+
+            <div class="social-links">
+              <a href="https://github.com/HenriqueCesarSilvaCarvalho" 
+                 target="_blank" 
+                 class="btn btn-outline-light me-3 social-btn">
+                <i class="fab fa-github me-2"></i>GitHub
+              </a>
+              <a href="https://www.linkedin.com/in/henrique-c7-224132365/" 
+                 target="_blank" 
+                 class="btn btn-outline-light social-btn">
+                <i class="fab fa-linkedin me-2"></i>LinkedIn
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr style="border-color: rgba(255,255,255,0.3); margin: 1rem 0;">
+
+      <div class="text-center">
+        <p class="mb-0">
+          <i class="fas fa-calendar-alt me-1"></i>
+          © 2024 - Todos os direitos reservados
+        </p>
+      </div>
+    </div>
   </footer>
 
   <!-- JS -->
