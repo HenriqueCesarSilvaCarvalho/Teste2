@@ -76,15 +76,15 @@
       if (!usuario) return;
 
       try {
-        // Buscar dados dos usuários para pegar favoritos
-        const usuariosResponse = await fetch('http://localhost:3000/usuarios');
-        const usuariosData = await usuariosResponse.json();
+        // Buscar dados do usuário específico
+        const usuarioResponse = await fetch(`http://localhost:3000/usuarios/${usuario.id}`);
+        const usuarioData = await usuarioResponse.json();
         
         // Buscar filmes
         const filmesResponse = await fetch('http://localhost:3000/filmes');
         const filmes = await filmesResponse.json();
         
-        const favoritos = usuariosData.favoritos.filter(f => f.usuarioId === usuario.id);
+        const favoritos = usuarioData.favoritos || [];
         const favoritosContainer = document.getElementById('favoritosContainer');
         const semFavoritos = document.getElementById('semFavoritos');
         
@@ -94,8 +94,8 @@
         }
         
         favoritosContainer.innerHTML = '';
-        favoritos.forEach(favorito => {
-          const filme = filmes.find(f => f.id === favorito.filmeId);
+        favoritos.forEach(filmeId => {
+          const filme = filmes.find(f => f.id === filmeId);
           if (filme) {
             favoritosContainer.innerHTML += `
               <div class="col-md-3 mb-4">
@@ -125,18 +125,26 @@
       const usuario = JSON.parse(sessionStorage.getItem('usuarioLogado'));
       
       try {
-        const response = await fetch('http://localhost:3000/usuarios');
-        const data = await response.json();
+        // Buscar dados do usuário atual
+        const response = await fetch(`http://localhost:3000/usuarios/${usuario.id}`);
+        const userData = await response.json();
         
-        data.favoritos = data.favoritos.filter(f => 
-          !(f.usuarioId === usuario.id && f.filmeId === filmeId)
-        );
+        // Remover filme dos favoritos
+        const novosFavoritos = userData.favoritos.filter(id => id !== parseInt(filmeId));
         
-        await fetch('http://localhost:3000/usuarios', {
+        // Atualizar no servidor
+        await fetch(`http://localhost:3000/usuarios/${usuario.id}`, {
           method: 'PUT',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(data)
+          body: JSON.stringify({
+            ...userData,
+            favoritos: novosFavoritos
+          })
         });
+        
+        // Atualizar sessionStorage
+        const usuarioAtualizado = {...usuario, favoritos: novosFavoritos};
+        sessionStorage.setItem('usuarioLogado', JSON.stringify(usuarioAtualizado));
         
         carregarFavoritos(); // Recarregar a lista
       } catch (error) {

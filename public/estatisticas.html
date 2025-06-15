@@ -42,10 +42,28 @@
   <script>
     async function fetchFilmes() {
       try {
-        const response = await fetch('http://localhost:3000/filmes');
-        return await response.json();
+        const response = await fetch('http://localhost:3000/filmes', {
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        });
+        
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        
+        const data = await response.json();
+        return Array.isArray(data) ? data : [];
       } catch (error) {
         console.error('Erro ao buscar filmes:', error);
+        // Mostrar mensagem de erro na tela
+        document.body.innerHTML += `
+          <div style="text-align: center; color: red; margin: 20px;">
+            <h3>Erro ao carregar dados dos filmes</h3>
+            <p>Verifique se o servidor está rodando na porta 3000</p>
+          </div>
+        `;
         return [];
       }
     }
