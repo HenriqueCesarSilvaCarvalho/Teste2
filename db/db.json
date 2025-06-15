@@ -32,17 +32,6 @@
       "genero": "Ação",
       "ano": 2007,
       "nota": 4.2
-    },
-    {
-      "id": "8834",
-      "titulo": "aaaaaa",
-      "descricao": "bbbbbb",
-      "imagem": "https://img.mypcards.com/img/2/2158/pokemon_scr_148_142/pokemon_scr_148_142_pt.jpg",
-      "visualizacoes": "1",
-      "tempo": "1920",
-      "genero": "1",
-      "ano": 1920,
-      "nota": 1
     }
   ],
   "usuarios": [
@@ -66,36 +55,14 @@
       ]
     },
     {
-      "nome": "Henrique",
-      "email": "harleyquinnc7@gmail.com",
-      "favoritos": [
-        1
-      ],
-      "id": "5b94"
-    },
-    {
-      "id": "3330",
-      "nome": "Henrique",
-      "email": "abc@gmail",
-      "senha": "henri100",
-      "favoritos": []
-    },
-    {
       "nome": "abc",
       "email": "abc@gmail.com",
+      "senha": "abcdef",
       "favoritos": [
-        1
+        1,
+        3
       ],
-      "id": "84a7"
-    },
-    {
-      "nome": "teste",
-      "email": "teste@gmail.com",
-      "favoritos": [
-        2,
-        1
-      ],
-      "id": "1d9f"
+      "id": "2494"
     }
   ]
 }
