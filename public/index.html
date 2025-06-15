@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Catálogo de Filmes</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha382-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"/>
+</head>
+
+<body>
+  <!-- Menu superior -->
+  <header>
+
+    <div class="bg-danger text-center py-3">
+      <h1>  <img src="logo.jpg" width="100" height="80"> Catálogo de Filmes</h1>
+      
+      <ul class="list-inline">
+        <li class="list-inline-item"><a href="#sobre">Sobre</a></li>
+        <li class="list-inline-item"><a href="#servicos">Serviços</a></li>
+        <li class="list-inline-item"><a href="#portfolio">Portfólio</a></li>
+        <li class="list-inline-item"><a href="#contato">Contato</a></li>
+      
+      </ul>
+    </div>
+
+    <!-- Botões e busca -->
+    <nav class="container my-3">
+      <div class="row g-2">
+        <div class="col"><button class="btn btn-primary w-100">Home</button></div>
+        <div class="col"><button class="btn btn-primary w-100">My Channel</button></div>
+        <div class="col"><button class="btn btn-primary w-100">Trending</button></div>
+        <div class="col"><button class="btn btn-primary w-100">Subscription</button></div>
+        <div class="col"><button class="btn btn-primary w-100">History</button></div>
+        <div class="col"><button class="btn btn-primary w-100">Watch Later</button></div>
+      </div>
+      <div class="row g-2 mt-2">
+        <div class="col"><input class="form-control" type="text" placeholder="Search..." /></div>
+       <button onclick="window.location.href='http://127.0.0.1:5500/public/estatisticas.html'" class="btn btn-primary">
+          Ver Estatísticas
+        </button>
+        <div class="col"><a href="login.html"><button class="btn btn-success w-100">Login</button></a></div>
+        <div class="col"><button class="btn btn-secondary w-100">Notifications</button></div>
+        <div class="col"><button class="btn btn-secondary w-100">Settings</button></div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container">
+    <!-- Slider -->
+    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <a href="movie-details.html">
+            <img src="https://media.gazetadopovo.com.br/2022/03/25090443/Marlon-Brando-em-O-Poderoso-Chefao-Reproducao.jpg" class="d-block w-100" alt="https://picsum.photos/2000/700/">
+            <div class="carousel-caption d-none d-md-block">
+              <p style="background-color: black; display: inline-block; padding: 0.2em 0.5em; border-radius: 5px; color: white;">Poderoso Chefao</p>
+            </div>
+          </a>
+        </div>
+        <div class="carousel-item">
+          <a href="movie-details-2.html">
+          <img src="https://i.ytimg.com/vi/lEsuaSaer2k/maxresdefault.jpg" class="d-block w-100" alt="https://picsum.photos/2000/700/">
+          <div class="carousel-caption d-none d-md-block">
+            <p style="background-color: black; display: inline-block; padding: 0.2em 0.5em; border-radius: 5px; color: white;">Lego ninjago</p>
+          </div>
+        </a>
+        </div>
+        <div class="carousel-item">
+          <a href="movie-details-3.html">
+          <img src="https://i.redd.it/6a4fqktpio1c1.png" class="d-block w-100" alt="https://picsum.photos/2000/700/">
+          <div class="carousel-caption d-none d-md-block">
+            <p style="background-color: black; display: inline-block; padding: 0.2em 0.5em; border-radius: 5px; color: white;">Ben 10 Corrida Contra o Tempo</p>
+          </div>
+          </a>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
+    <!-- Seção recomendados -->
+    <section class="recommended mb-5">
+      <h2>Recommended</h2>
+      <div class="container-fluid">
+        <div class="row" id="recommended-container">
+          <!-- Cards serão inseridos aqui dinamicamente -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção recém enviados -->
+        <section class="recently-uploaded mb-5">
+          <h2>Recently Uploaded</h2>
+          <div class="container-fluid">
+            <div class="row" id="recently-uploaded-container">
+              <!-- Cards serão inseridos aqui dinamicamente -->
+            </div>
+          </div>
+        </section>
+      </main>
+
+    
+
+  <!-- Rodapé -->
+  <footer class="bg-danger text-center text-white py-4">
+    <h2>Sobre o Criador:</h2>
+    <ul class="list-inline">
+      <li class="list-inline-item"><a class="text-white" href="#instagram">Instagram</a></li>
+      <li class="list-inline-item"><a class="text-white" href="#twitter">Twitter</a></li>
+      <li class="list-inline-item"><a class="text-white" href="#linkedin">LinkedIn</a></li>
+      <li class="list-inline-item"><a class="text-white" href="#discord">Discord</a></li>
+    </ul>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha382-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script src="app.js"></script>
+</body>
+</html>

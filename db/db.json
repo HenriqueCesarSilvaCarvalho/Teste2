@@ -1,0 +1,44 @@
+{
+  "filmes": [
+    {
+      "titulo": "O Poderoso Chefão",
+      "imagem": "https://m.media-amazon.com/images/I/71nJYTNc-sL._AC_UF1000,1000_QL80_.jpg",
+      "visualizacoes": "1million views",
+      "tempo": "53 years ago",
+      "link": "movie-details.html",
+      "genero": "Drama",
+      "ano": 1972,
+      "nota": 9.2
+    },
+    {
+      "titulo": "Lego Ninjago",
+      "imagem": "https://media.fstatic.com/6-uiCaaPNuhLA3VQ4yLM_jENask=/322x478/smart/filters:format(webp)/media/movies/covers/2017/06/DCs6XiIUAAI6JBk.jpg",
+      "visualizacoes": "500 views",
+      "tempo": "8 years ago",
+      "link": "movie-details-2.html",
+      "genero": "Animação",
+      "ano": 2017,
+      "nota": 6.1
+    },
+    {
+      "titulo": "Ben 10 Corrida Contra O Tempo",
+      "imagem": "https://m.media-amazon.com/images/M/MV5BZmJiZTdkNTItNjVkOC00NTViLWJhMjQtNWNmODUyY2E2ZTZiXkEyXkFqcGc@._V1_QL75_UX190_CR0,2,190,281_.jpg",
+      "visualizacoes": "Ben 10k views",
+      "tempo": "18 years ago",
+      "link": "movie-details-3.html",
+      "genero": "Ação",
+      "ano": 2007,
+      "nota": 10000.0
+    },
+    {
+      "titulo": "Carrinhos",
+      "imagem": "https://media.fstatic.com/clcQI1qHpIWPGSyAYewwQMy9F8U=/322x478/smart/filters:format(webp)/media/movies/covers/2013/06/None_tNone_5.jpg",
+      "visualizacoes": "1 view",
+      "tempo": "2 days ago",
+      "link": "movie-details-4.html",
+      "genero": "Comédia",
+      "ano": 2013,
+      "nota": 2.3
+    }
+  ]
+}
