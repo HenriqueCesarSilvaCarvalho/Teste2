@@ -87,7 +87,7 @@ function exibirFilmes(listaFilmes = filmes) {
                                 👁️ ${filme.visualizacoes} | ⏱️ ${filme.tempo} | ⭐ ${filme.nota}
                             </small>
                             <div class="mt-2">
-                                <button class="btn btn-primary btn-sm me-2" onclick="verDetalhes(${filme.id})">
+                                <button class="btn btn-primary btn-sm me-2" onclick="verDetalhes('${filme.id}')">
                                     Ver Detalhes
                                 </button>
                                 <button class="btn btn-warning btn-sm me-2" onclick="editarFilme(${filme.id})">
