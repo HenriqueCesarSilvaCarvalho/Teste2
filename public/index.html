@@ -51,15 +51,33 @@
           </button>
         </div>
 
-        <div class="col">
+        <div class="col" id="auth-button-container">
           <a href="login.html">
             <button class="btn btn-success w-100">Login</button>
           </a>
+        </div>
+        
+        <div class="col" id="favoritos-container" style="display: none;">
+          <button class="btn btn-warning w-100" onclick="mostrarFavoritos()">
+            Favoritos
+          </button>
         </div>
         <div class="col"><button class="btn btn-secondary w-100">Notifications</button></div>
         <div class="col"><button class="btn btn-secondary w-100">Settings</button></div>
       </div>
     </nav>
+
+    <!-- ÁREA DO USUÁRIO LOGADO -->
+    <div id="user-info" class="container mt-3" style="display: none;">
+      <div class="alert alert-info d-flex justify-content-between align-items-center">
+        <span>
+          <strong>👋 Olá, <span id="user-name"></span>!</strong> Você está logado.
+        </span>
+        <button class="btn btn-sm btn-outline-danger" onclick="logout()">
+          Sair
+        </button>
+      </div>
+    </div>
 
     <!-- CARROSSEL -->
     <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">

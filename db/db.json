@@ -1,58 +1,101 @@
 {
   "filmes": [
     {
-      "id": "1",
+      "id": 1,
       "titulo": "O Poderoso Chefão",
-      "imagem": "https://m.media-amazon.com/images/I/71nJYTNc-sL._AC_UF1000,1000_QL80_.jpg",
-      "visualizacoes": "1million views",
-      "tempo": "53 years ago",
-      "link": "movie-details.html",
-      "genero": "Drama",
+      "descricao": "A saga de uma família do crime organizado.",
+      "imagem": "https://media.gazetadopovo.com.br/2022/03/25090443/Marlon-Brando-em-O-Poderoso-Chefao-Reproducao.jpg",
+      "visualizacoes": "2.5M",
+      "tempo": "175 min",
+      "genero": "Crime",
       "ano": 1972,
       "nota": 9.2
     },
     {
-      "id": "2",
+      "id": 2,
       "titulo": "Lego Ninjago",
-      "imagem": "https://media.fstatic.com/6-uiCaaPNuhLA3VQ4yLM_jENask=/322x478/smart/filters:format(webp)/media/movies/covers/2017/06/DCs6XiIUAAI6JBk.jpg",
-      "visualizacoes": "500 views",
-      "tempo": "8 years ago",
-      "link": "movie-details-2.html",
+      "descricao": "Uma aventura animada onde jovens ninjas defendem sua cidade.",
+      "imagem": "https://i.ytimg.com/vi/lEsuaSaer2k/maxresdefault.jpg",
+      "visualizacoes": "1.8M",
+      "tempo": "101 min",
       "genero": "Animação",
       "ano": 2017,
-      "nota": 6.1
+      "nota": 6
     },
     {
-      "id": "3",
-      "titulo": "Ben 10 Corrida Contra O Tempo",
-      "imagem": "https://m.media-amazon.com/images/M/MV5BZmJiZTdkNTItNjVkOC00NTViLWJhMjQtNWNmODUyY2E2ZTZiXkEyXkFqcGc@._V1_QL75_UX190_CR0,2,190,281_.jpg",
-      "visualizacoes": "Ben 10k views",
-      "tempo": "18 years ago",
-      "link": "movie-details-3.html",
+      "id": 3,
+      "titulo": "Ben 10 Corrida Contra o Tempo",
+      "descricao": "Um filme live-action baseado na série animada Ben 10.",
+      "imagem": "https://i.redd.it/6a4fqktpio1c1.png",
+      "visualizacoes": "900K",
+      "tempo": "67 min",
       "genero": "Ação",
       "ano": 2007,
-      "nota": 10000
+      "nota": 4.2
     },
     {
-      "id": "4",
-      "titulo": "Carrinhos",
-      "imagem": "https://media.fstatic.com/clcQI1qHpIWPGSyAYewwQMy9F8U=/322x478/smart/filters:format(webp)/media/movies/covers/2013/06/None_tNone_5.jpg",
-      "visualizacoes": "1 view",
-      "tempo": "2 days ago",
-      "link": "movie-details-4.html",
-      "genero": "Comédia",
-      "ano": 2013,
-      "nota": 2.3
-    },
-    {
-      "id": "6718",
-      "titulo": "squirtle",
+      "id": "8834",
+      "titulo": "aaaaaa",
+      "descricao": "bbbbbb",
       "imagem": "https://img.mypcards.com/img/2/2158/pokemon_scr_148_142/pokemon_scr_148_142_pt.jpg",
-      "visualizacoes": "10K",
-      "tempo": "2h",
-      "genero": "drama",
-      "ano": 2006,
-      "nota": 2005
+      "visualizacoes": "1",
+      "tempo": "1920",
+      "genero": "1",
+      "ano": 1920,
+      "nota": 1
+    }
+  ],
+  "usuarios": [
+    {
+      "id": 1,
+      "nome": "Admin",
+      "email": "admin@exemplo.com",
+      "senha": "123456",
+      "favoritos": [
+        1,
+        3
+      ]
+    },
+    {
+      "id": 2,
+      "nome": "Usuario Teste",
+      "email": "teste@exemplo.com",
+      "senha": "senha123",
+      "favoritos": [
+        2
+      ]
+    },
+    {
+      "nome": "Henrique",
+      "email": "harleyquinnc7@gmail.com",
+      "favoritos": [
+        1
+      ],
+      "id": "5b94"
+    },
+    {
+      "id": "3330",
+      "nome": "Henrique",
+      "email": "abc@gmail",
+      "senha": "henri100",
+      "favoritos": []
+    },
+    {
+      "nome": "abc",
+      "email": "abc@gmail.com",
+      "favoritos": [
+        1
+      ],
+      "id": "84a7"
+    },
+    {
+      "nome": "teste",
+      "email": "teste@gmail.com",
+      "favoritos": [
+        2,
+        1
+      ],
+      "id": "1d9f"
     }
   ]
 }

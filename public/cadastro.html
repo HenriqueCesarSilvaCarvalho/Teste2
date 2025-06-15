@@ -1,0 +1,233 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro - Catálogo de Filmes</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        .cadastro-container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            padding: 40px;
+            width: 100%;
+            max-width: 400px;
+        }
+        
+        .cadastro-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .cadastro-header h1 {
+            color: #333;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        
+        .cadastro-header p {
+            color: #666;
+            margin: 0;
+        }
+        
+        .form-control {
+            border-radius: 10px;
+            border: 2px solid #e9ecef;
+            padding: 12px 15px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+        
+        .form-control:focus {
+            border-color: #667eea;
+            box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
+        }
+        
+        .btn-cadastro {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border: none;
+            border-radius: 10px;
+            padding: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            color: white;
+            transition: transform 0.3s ease;
+        }
+        
+        .btn-cadastro:hover {
+            transform: translateY(-2px);
+            color: white;
+        }
+        
+        .divider {
+            text-align: center;
+            margin: 20px 0;
+            position: relative;
+        }
+        
+        .divider::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: #e9ecef;
+        }
+        
+        .divider span {
+            background: white;
+            padding: 0 15px;
+            color: #666;
+        }
+        
+        .back-link {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: rgba(255,255,255,0.9);
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            color: #333;
+            transition: all 0.3s ease;
+        }
+        
+        .back-link:hover {
+            background: white;
+            color: #667eea;
+            text-decoration: none;
+        }
+        
+        .alert {
+            border-radius: 10px;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="back-link">← Voltar ao Catálogo</a>
+    
+    <div class="cadastro-container">
+        <div class="cadastro-header">
+            <h1>Cadastro</h1>
+            <p>Crie sua conta</p>
+        </div>
+        
+        <div id="alertContainer"></div>
+        
+        <form id="cadastroForm">
+            <div class="mb-3">
+                <label for="nome" class="form-label">Nome Completo</label>
+                <input type="text" class="form-control" id="nome" required>
+            </div>
+            
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" required>
+            </div>
+            
+            <div class="mb-3">
+                <label for="senha" class="form-label">Senha</label>
+                <input type="password" class="form-control" id="senha" minlength="6" required>
+            </div>
+            
+            <div class="mb-3">
+                <label for="confirmarSenha" class="form-label">Confirmar Senha</label>
+                <input type="password" class="form-control" id="confirmarSenha" minlength="6" required>
+            </div>
+            
+            <button type="submit" class="btn btn-cadastro w-100">Cadastrar</button>
+        </form>
+        
+        <div class="divider">
+            <span>ou</span>
+        </div>
+        
+        <div class="text-center">
+            <p class="mb-0">Já tem conta? <a href="login.html" class="text-decoration-none">Entre</a></p>
+        </div>
+    </div>
+
+    <script>
+        const apiURL = 'http://localhost:3000/usuarios';
+        
+        document.getElementById('cadastroForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const nome = document.getElementById('nome').value;
+            const email = document.getElementById('email').value;
+            const senha = document.getElementById('senha').value;
+            const confirmarSenha = document.getElementById('confirmarSenha').value;
+            
+            if (senha !== confirmarSenha) {
+                showAlert('As senhas não coincidem!', 'danger');
+                return;
+            }
+            
+            try {
+                // Verificar se email já existe
+                const response = await fetch(apiURL);
+                const usuarios = await response.json();
+                
+                if (usuarios.find(u => u.email === email)) {
+                    showAlert('Este email já está cadastrado!', 'danger');
+                    return;
+                }
+                
+                // Criar novo usuário
+                const novoUsuario = {
+                    nome,
+                    email,
+                    senha,
+                    favoritos: []
+                };
+                
+                const cadastroResponse = await fetch(apiURL, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(novoUsuario)
+                });
+                
+                if (cadastroResponse.ok) {
+                    showAlert('Cadastro realizado com sucesso!', 'success');
+                    setTimeout(() => {
+                        window.location.href = 'login.html';
+                    }, 1500);
+                } else {
+                    showAlert('Erro ao realizar cadastro. Tente novamente.', 'danger');
+                }
+                
+            } catch (error) {
+                showAlert('Erro ao realizar cadastro. Tente novamente.', 'danger');
+                console.error('Erro:', error);
+            }
+        });
+        
+        function showAlert(message, type) {
+            const alertContainer = document.getElementById('alertContainer');
+            alertContainer.innerHTML = `
+                <div class="alert alert-${type} alert-dismissible fade show" role="alert">
+                    ${message}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                </div>
+            `;
+        }
+    </script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
