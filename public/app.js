@@ -1,4 +1,3 @@
-
 // Variáveis globais
 let filmes = [];
 let usuarioLogado = null;
@@ -28,7 +27,7 @@ function atualizarInterfaceUsuario(logado) {
     const favoritosContainer = document.getElementById('favoritos-container');
     const userInfo = document.getElementById('user-info');
     const userName = document.getElementById('user-name');
-    
+
     if (logado && usuarioLogado) {
         // Usuário logado - mostrar informações e botão de logout
         authContainer.style.display = 'none';
@@ -116,7 +115,7 @@ async function toggleFavorito(filmeId) {
 
     try {
         const isFavorito = usuarioLogado.favoritos.includes(filmeId);
-        
+
         if (isFavorito) {
             // Remover dos favoritos
             usuarioLogado.favoritos = usuarioLogado.favoritos.filter(id => id !== filmeId);
@@ -160,7 +159,7 @@ function mostrarFavoritos() {
         alert('Você não tem filmes favoritos ainda!');
         return;
     }
-    
+
     const filmesFavoritos = filmes.filter(filme => usuarioLogado.favoritos.includes(filme.id));
     exibirFilmes(filmesFavoritos);
 }
