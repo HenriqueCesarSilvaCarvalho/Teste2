@@ -90,10 +90,10 @@ function exibirFilmes(listaFilmes = filmes) {
                                 <button class="btn btn-primary btn-sm me-2" onclick="verDetalhes('${filme.id}')">
                                     Ver Detalhes
                                 </button>
-                                <button class="btn btn-warning btn-sm me-2" onclick="editarFilme(${filme.id})">
+                                <button class="btn btn-warning btn-sm me-2" onclick="editarFilme('${filme.id}')">
                                     Editar
                                 </button>
-                                <button class="btn btn-danger btn-sm" onclick="excluirFilme(${filme.id})">
+                                <button class="btn btn-danger btn-sm" onclick="excluirFilme('${filme.id}')">
                                     Excluir
                                 </button>
                             </div>
